@@ -25,20 +25,6 @@
         <link rel="shortcut icon" href="{Favicon}" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
 
-        <!-- Font loader -->
-        <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.10/webfont.js"></script>
-        <script>
-            WebFont.load({
-                 custom: {
-                     families: [
-                     ],
-                     urls: [
-                     ]
-                 },
-                 timeout: 10000
-             });
-        </script>
-
         {{ static(file_path='modernizr.js') }}
 
         <!-- Project CSS -->
@@ -108,7 +94,6 @@
     </head>
     <body class="{block:IndexPage}index-page{/block:IndexPage}{block:PermalinkPage}permalink-page{/block:PermalinkPage}">
 
-        {block:IndexPage}
         <header class="blog-header">
             <div class="container-fluid">
                 <div class="row">
@@ -119,7 +104,6 @@
                 </div>
             </div>
         </header>
-        {/block:IndexPage}
 
         {block:HasPages}
         <nav>
@@ -138,12 +122,6 @@
         </nav>
         {/block:HasPages}
 
-        <div class="fixed-nav">
-            <div class="nav-wrapper">
-                <h1><a href="/">{Title}</a></h1>
-            </div>
-        </div>
-
         <div id="container" class="group container-fluid">
             <div class="row">
                 <section id="post-wrap">
@@ -159,15 +137,12 @@
                     {block:Posts}
                         <article class="post {TagsAsClasses} {block:Text}text{/block:Text}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}{block:Photo}photo{/block:Photo}{block:Photoset}photoset{/block:Photoset}{block:Panorama}panorama{/block:Panorama}{block:Chat}chat{/block:Chat}{block:Answer}answer{/block:Answer}">
 
-
-                                {block:IndexPage}
                                 <div class="post-header">
                                         {block:NewDayDate}
                                             <p class="pubdate"><a href="{Permalink}" class="permalink">{block:Date}{ShortMonth}. {DayOfMonth}, {Year} {12Hour}:{Minutes} {AmPm}{/block:Date}</a></p>
                                         {/block:NewDayDate}
                                         {block:SameDayDate}<p class="pubdate"><a href="{Permalink}" class="permalink">{block:Date}{12Hour}:{Minutes} {AmPm}{/block:Date}</a></p>{/block:SameDayDate}
                                 </div>
-                                {/block:IndexPage}
 
                                 <div class="post-content">
                                     <div class="post-content-wrapper">
@@ -185,7 +160,7 @@
                                         {block:Quote}
                                             <div class="quote-wrapper">
                                                 <blockquote class="words {Length}"><span class="quote-open">&#8220;</span>{Quote}</blockquote>
-                                                {block:Source}<div class="source">{Source}</div>{/block:Source}
+                                                {block:Source}<div class="source">&mdash;{Source}</div>{/block:Source}
                                             </div>
                                         {/block:Quote}
                                         {block:Link}
@@ -249,7 +224,6 @@
 
                                             {block:PermalinkPage}
                                                 {block:Posts}
-                                                    <p class="pubdate">{block:Date}{Month} {DayOfMonth}, {Year}{/block:Date}</p>
                                                     <div class="sharing"> {LikeButton color="grey"}{ReblogButton color="grey"} </div>
                                                 {/block:Posts}
                                             {/block:PermalinkPage}

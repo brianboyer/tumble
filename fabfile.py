@@ -169,7 +169,7 @@ def render(slug=None):
     require('settings', provided_by=[production, staging, development])
 
     # Better update copy. The first sheet contains all of the tumblrs we know of.
-    update_copy()
+    # update_copy()
 
     # Prepare a list of slugs to render.
     slugs = []
