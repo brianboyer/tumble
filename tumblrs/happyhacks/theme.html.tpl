@@ -138,10 +138,7 @@
                         <article class="post {TagsAsClasses} {block:Text}text{/block:Text}{block:Quote}quote{/block:Quote}{block:Link}link{/block:Link}{block:Video}video{/block:Video}{block:Audio}audio{/block:Audio}{block:Photo}photo{/block:Photo}{block:Photoset}photoset{/block:Photoset}{block:Panorama}panorama{/block:Panorama}{block:Chat}chat{/block:Chat}{block:Answer}answer{/block:Answer}">
 
                                 <div class="post-header">
-                                        {block:NewDayDate}
-                                            <p class="pubdate"><a href="{Permalink}" class="permalink">{block:Date}{ShortMonth}. {DayOfMonth}, {Year} {12Hour}:{Minutes} {AmPm}{/block:Date}</a></p>
-                                        {/block:NewDayDate}
-                                        {block:SameDayDate}<p class="pubdate"><a href="{Permalink}" class="permalink">{block:Date}{12Hour}:{Minutes} {AmPm}{/block:Date}</a></p>{/block:SameDayDate}
+                                    <p class="pubdate"><a href="{Permalink}" class="permalink">{block:Date}{ShortMonth}. {DayOfMonth}, {Year} {12Hour}:{Minutes} {AmPm}{/block:Date}</a></p>
                                 </div>
 
                                 <div class="post-content">
@@ -164,7 +161,7 @@
                                             </div>
                                         {/block:Quote}
                                         {block:Link}
-                                            <h3><a href="{URL}" {Target}>{Name} <i class="icon icon-external-link"></i></a></h3>
+                                            <h3><a href="{URL}" {Target}>{Name}</a></h3>
                                             <div class="caption">
                                                 <blockquote>{block:Excerpt}{Excerpt}{/block:Excerpt}</blockquote>
                                                 {block:Description}{Description}{/block:Description}
@@ -228,7 +225,7 @@
                                                 {/block:Posts}
                                             {/block:PermalinkPage}
                                             {block:IndexPage}
-                                                <p class="note-count"><a href="{Permalink}" class="permalink"><i class="icon icon-comment"></i> {NoteCountWithLabel}</a></p>
+                                                <p class="note-count"><a href="{Permalink}" class="permalink">{NoteCountWithLabel}</a></p>
                                                 <div class="sharing">{LikeButton color="grey"}{ReblogButton color="grey"}</div>
                                             {/block:IndexPage}
                                         </div>
@@ -240,13 +237,16 @@
 
                             {block:PermalinkPage}
 
-                                <form id="tinyletter" action="https://tinyletter.com/brianboyer" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/brianboyer', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
-                                    <p><label for="tlemail">Join the How To Be Happy mailing list. It's like this blog, but via email.</label></p>
-                                    <p><input placeholder="What's your email?" type="text" name="email" id="tlemail" /></p>
-                                    <input type="hidden" value="1" name="embed"/>
-                                    <input type="submit" value="Subscribe" />
-                                    <p><a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p>
-                                </form>
+                                <div id="tinyletter-wrapper">
+                                    <form id="tinyletter" action="https://tinyletter.com/brianboyer" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/brianboyer', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+                                        <div class="input-group">
+                                            <label for="tlemail">Join the How To Be Happy mailing list. It's like this blog, but via email.</label>
+                                            <input class="form-control" placeholder="What's your email?" type="text" name="email" id="tlemail" />
+                                            <input type="hidden" value="1" name="embed"/>
+                                            <button type="submit" class="btn btn-default">Subscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
 
                                 {block:PostNotes}
                                     <div class="post-notes">
@@ -256,7 +256,7 @@
                                 {/block:PostNotes}
 
                                 <nav class="pagination-index">
-                                    <a href="/">See More Posts <i class="fa fa-angle-right"></i></a>
+                                    <a href="/">See More Posts</a>
                                 </nav>
                             {/block:PermalinkPage}
                         </article>
