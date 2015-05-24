@@ -156,7 +156,14 @@
                                         {/block:Text}
                                         {block:Quote}
                                             <div class="quote-wrapper">
-                                                <blockquote class="words {Length}"><span class="quote-open">&#8220;</span>{Quote}</blockquote>
+                                                <blockquote class="words {Length}"><span class="quote-open">
+                                                {block:IndexPage}
+                                                    <a href="{Permalink}" class="permalink">&#8220;</a>
+                                                {/block:IndexPage}
+                                                {block:PermalinkPage}
+                                                    &#8220;
+                                                {/block:PermalinkPage}
+                                                </span>{Quote}</blockquote>
                                                 {block:Source}<div class="source">&mdash;{Source}</div>{/block:Source}
                                             </div>
                                         {/block:Quote}
