@@ -270,23 +270,6 @@
                     {/block:Posts}
                     <!-- END POSTS -->
                     </div>
-
-
-                    <footer id="footer">
-                        {block:Pagination}
-                            <nav class="pagination">
-                                <section class="buttons">
-                                    {block:PreviousPage}<a href="{PreviousPage}" class="left">{lang:Previous page}<span class="arrow"></span></a>{/block:PreviousPage}
-                                    {block:NextPage}<a href="{NextPage}" class="right">{lang:Next page}<span class="arrow"></span></a>{block:NextPage}
-                                </section>
-                                <section class="disabled buttons">
-                                    <li class="left"><span class="arrow"></span></li>
-                                    <li class="right"><span class="arrow"></span></li>
-                                </section>
-                                <section class="count">Page  {CurrentPage} / {TotalPages}</section>
-                            </nav>
-                        {/block:Pagination}
-                    </footer>
                 </section> <!-- #post-wrap -->
             </div>
         </div> <!-- #container -->
